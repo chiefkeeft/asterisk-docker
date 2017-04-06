@@ -1,5 +1,5 @@
 #!/bin/sh -x
 
 
-docker run -it --net=host -v /var/absdata/setvicephone-pbx-moh:/var/lib/asterisk/moh -v /var/absdata/setvicephone-pbx-ivr:/var/lib/asterisk/hello servicephone 
+docker run -it --net=host -v /var/absdata/servicephone-pbx-moh:/var/lib/asterisk/moh -v /var/absdata/servicephone-pbx-ivr:/var/lib/asterisk/hello servicephone 
 
