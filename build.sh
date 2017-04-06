@@ -20,7 +20,7 @@ make menuselect.makeopts
 menuselect/menuselect   --disable BUILD_NATIVE   --enable cdr_csv   --enable chan_sip   --enable res_snmp   --enable res_http_websocket   --enable MOH-OPSOUND-G729 --enable MOH-OPSOUND-G722 --enable MOH-OPSOUND-ALAW --enable MOH-OPSOUND-ULAW --enable res_hep_pjsip --enable res_hep_rtcp --enable CORE-SOUNDS-EN-G729 --enable CORE-SOUNDS-EN-G722 --enable CORE-SOUNDS-EN-ALAW --enable CORE-SOUNDS-EN-ULAW
 make
 make install
-chown -R asterisk:asterisk /etc/asterisk
+chown -R asterisk:asterisk /etc/asterisk/*
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/rc.debian.asterisk /etc/init.d/asterisk
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/etc_default_asterisk /etc/default/asterisk
 chown -R asterisk:asterisk /var/run/asterisk/
