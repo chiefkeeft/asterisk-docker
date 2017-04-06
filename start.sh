@@ -10,6 +10,14 @@ else
     sed -i "s/bindport=5060/bindport=$SIP_PORT/g" /etc/asterisk/sip.conf
 fi
 
+if [ -z "$ENV SIP_PORT_TCP" ]; then
+    echo "Default SIP PORT TCP"
+else
+    echo "SIP Port changed"
+    sed -i "s/tcpbindaddr=0.0.0.0/tcpbindaddr=0.0.0.0:$SIP_PORT_TCP/g" /etc/asterisk/sip.conf
+fi
+
+
 if [ -z "$ENV RTP_PORT_START" ]; then
     echo "Default RTP Port Start"
 else
