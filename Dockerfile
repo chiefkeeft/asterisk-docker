@@ -10,4 +10,9 @@ RUN /bin/sh /tmp/build.sh
 WORKDIR /root
 COPY odbcinst.ini /etc/
 COPY odbc.ini /etc/
+COPY postgresql.crt /home/asterisk/postgresql
+COPY postgresql.key /home/asterisk/postgresql
+COPY root.crt /home/asterisk/postgresql
+RUN chmod -R 600 /home/asterisk/postgresql/* 
+RUN chown -R asterisk:asterisk /home/asterisk/postgresql/
 CMD ["/bin/sh", "/start.sh"]

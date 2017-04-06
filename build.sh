@@ -27,6 +27,8 @@ chown -R asterisk:asterisk /var/run/asterisk/
 chown -R asterisk:asterisk /var/lib/asterisk/
 chown -R asterisk:asterisk /var/log/asterisk/
 chown -R asterisk:asterisk /var/spool/asterisk/
+chown -R asterisk:asterisk /usr/sbin/asterisk
+
 echo "d /var/run/asterisk 0775 asterisk asterisk" > /etc/tmpfiles.d/asterisk.conf
 wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc2.2-x86_64-core2-sse4.so -O codec_g729.so
 mv codec_g729.so /usr/lib/asterisk/modules/
