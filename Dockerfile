@@ -16,4 +16,9 @@ COPY postgresql.key /home/asterisk/.postgresql/
 COPY root.crt /home/asterisk/.postgresql/
 RUN chmod -R 600 /home/asterisk/.postgresql/* 
 RUN chown -R asterisk:asterisk /home/asterisk/.postgresql/
+RUN apt-get install -y language-pack-ru
+ENV LANGUAGE ru_RU.UTF-8
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
+RUN locale-gen ru_RU.UTF-8 && dpkg-reconfigure locales
 CMD ["/bin/sh", "/start.sh"]
