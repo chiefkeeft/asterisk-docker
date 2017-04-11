@@ -45,5 +45,10 @@ cd psqlodbc-09.05.0210
 chmod +x /usr/bin/odbc_config
 ./configure
 make && make install
+sudo chown -R asterisk:asterisk /var/run/asterisk/
+sudo chown -R asterisk:asterisk /var/lib/asterisk/
+sudo chown -R asterisk:asterisk /var/log/asterisk/
+sudo chown -R asterisk:asterisk /var/spool/asterisk/
+sudo chown -R asterisk:asterisk /usr/sbin/asterisk
 
 

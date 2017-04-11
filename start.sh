@@ -32,4 +32,4 @@ else
     sed -i "s/rtpend=20000/rtpend=$RTP_PORT_END/g" /etc/asterisk/rtp.conf
 fi      
 
-sudo -u asterisk /usr/sbin/asterisk
+sudo -u asterisk /usr/sbin/asterisk -vvvvvvvvv
