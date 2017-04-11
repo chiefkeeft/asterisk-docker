@@ -7,14 +7,14 @@ if [ -z "$ENV SIP_PORT" ]; then
     echo "Default SIP PORT"
 else
     echo "SIP Port changed"
-    sed -i "s/bindport=5060/bindport=$SIP_PORT/g" /etc/asterisk/sip.conf
+    sed -i "s/bindport=5061/bindport=$SIP_PORT/g" /etc/asterisk/sip.conf
 fi
 
 if [ -z "$ENV SIP_PORT_TCP" ]; then
     echo "Default SIP PORT TCP"
 else
     echo "SIP Port changed"
-    sed -i "s/tcpbindaddr=0.0.0.0/tcpbindaddr=0.0.0.0:$SIP_PORT_TCP/g" /etc/asterisk/sip.conf
+    sed -i "s/tcpbindaddr=0.0.0.0:5061/tcpbindaddr=0.0.0.0:$SIP_PORT_TCP/g" /etc/asterisk/sip.conf
 fi
 
 
@@ -32,4 +32,4 @@ else
     sed -i "s/rtpend=20000/rtpend=$RTP_PORT_END/g" /etc/asterisk/rtp.conf
 fi      
 
-su asterisk && /usr/sbin/asterisk -vvvvvvv
+sudo -u asterisk /usr/sbin/asterisk
