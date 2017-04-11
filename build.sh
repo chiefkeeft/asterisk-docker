@@ -24,11 +24,11 @@ make install
 chown -R asterisk:asterisk /etc/asterisk/*
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/rc.debian.asterisk /etc/init.d/asterisk
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/etc_default_asterisk /etc/default/asterisk
-chown -R asterisk:asterisk /var/run/asterisk/
-chown -R asterisk:asterisk /var/lib/asterisk/
-chown -R asterisk:asterisk /var/log/asterisk/
-chown -R asterisk:asterisk /var/spool/asterisk/
-chown -R asterisk:asterisk /usr/sbin/asterisk
+sudo chown -R asterisk:asterisk /var/run/asterisk/*
+sudo chown -R asterisk:asterisk /var/lib/asterisk/*
+sudo chown -R asterisk:asterisk /var/log/asterisk/*
+sudo chown -R asterisk:asterisk /var/spool/asterisk/*
+sudo chown -R asterisk:asterisk /usr/sbin/asterisk
 
 echo "d /var/run/asterisk 0775 asterisk asterisk" > /etc/tmpfiles.d/asterisk.conf
 wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc2.2-x86_64-core2-sse4.so -O codec_g729.so
