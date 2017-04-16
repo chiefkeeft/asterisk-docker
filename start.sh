@@ -32,5 +32,6 @@ chmod 775 /etc/asterisk/
 #    sed -i "s/rtpend=20000/rtpend=$RTP_PORT_END/g" /etc/asterisk/rtp.conf
 #fi      
 rm /var/run/fail2ban/fail2ban.sock || true
+rm /etc/fail2ban/jail.conf
 service fail2ban restart
 /usr/sbin/asterisk -f -U asterisk
