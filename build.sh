@@ -4,7 +4,9 @@
 apt-get -qq update
 apt-get -y install wget
 apt-get -y install sudo
-apt-get install fail2ban
+apt-get -y install fail2ban iptables
+rm /etc/fail2ban/filter.d/asterisk.conf
+cat /tmp/jail.conf >> /etc/fail2ban/jail.conf
 apt-get -y install libxml2-dev libjansson-dev libncurses5-dev libgsm1-dev libspeex-dev libspeexdsp-dev libssl-dev libsqlite3-dev subversion build-essential uuid-dev unixodbc-dev pkg-config
 useradd --create-home --shell /bin/bash asterisk
 mkdir -p /usr/src/asterisk

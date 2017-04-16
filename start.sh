@@ -31,5 +31,6 @@ chmod 775 /etc/asterisk/
 #    echo "SIP RTP END changed"
 #    sed -i "s/rtpend=20000/rtpend=$RTP_PORT_END/g" /etc/asterisk/rtp.conf
 #fi      
-service fail2ban start
-/usr/sbin/asterisk -f -U asterisk -G asterisk -vvvg -c
+rm /var/run/fail2ban/fail2ban.sock || true
+service fail2ban restart
+/usr/sbin/asterisk -f -U asterisk
