@@ -28,6 +28,7 @@ make install
 chown -R asterisk:asterisk /etc/asterisk/*
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/rc.debian.asterisk /etc/init.d/asterisk
 cp /usr/src/asterisk/asterisk-13.*/contrib/init.d/etc_default_asterisk /etc/default/asterisk
+touch /var/log/auth.log /var/log/asterisk/messages /var/log/asterisk/security
 sudo chown -R asterisk:asterisk /var/run/asterisk/*
 sudo chown -R asterisk:asterisk /var/lib/asterisk/*
 sudo chown -R asterisk:asterisk /var/log/asterisk/*
